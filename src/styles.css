@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+header.head{
+    background: url(src/assets/img/city-animated-1.jpg);
+    background-size: cover;
+    background-position: center;
+    min-height: 1000px;
+}
+@media screen and (max-width: 670px){
+    header.head{
+        min-height: 500px;
+    }
+}
+
+.tabs .indicator{
+background-color: white;
+}
+.tabs .tab a:focus, .tabs .tab a:focus.active{
+background: transparent;
+}
+.section{
+padding-top: 4vw;
+padding-bottom: 4vw;
+}
