@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
    
     M.Tabs.init(document.querySelector('.tabs'), []);
     M.Parallax.init(document.getElementById('parallax-1'), [])
+    M.Parallax.init(document.getElementById('parallax-2'), [])
   }
   
 }
