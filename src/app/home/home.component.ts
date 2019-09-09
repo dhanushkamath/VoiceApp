@@ -16,6 +16,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
    
     M.Tabs.init(document.querySelector('.tabs'), []);
+
+    
   }
   
 }
