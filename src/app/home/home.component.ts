@@ -16,8 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
    
     M.Tabs.init(document.querySelector('.tabs'), []);
-
-    
+    M.Parallax.init(document.getElementById('parallax-1'), [])
   }
   
 }

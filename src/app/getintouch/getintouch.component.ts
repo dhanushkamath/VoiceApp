@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+var M = require('materialize-css')
+
 @Component({
   selector: 'app-getintouch',
   templateUrl: './getintouch.component.html',
@@ -10,6 +12,8 @@ export class GetintouchComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    M.Datepicker.init(document.querySelector('.datepicker'), []);
+    
   }
-
+  
 }
