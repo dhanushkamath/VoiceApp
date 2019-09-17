@@ -7,14 +7,14 @@
             <div class="card-content">
                 <div class="form-field white-text">
                     <label for="l-username">Username</label>
-                    <input type="text" class="black-text" id="l-username" name="uname">
+                    <input type="text" class="black-text" [(ngModel)]="userData.email" id="l-username" name="uname">
                 </div>
                 <div class="form-field">
                     <label for="l-password">Password</label>
-                    <input type="password" class="black-text" id="l-password" name="upwd">
+                    <input type="password" class="black-text" [(ngModel)]="userData.password" id="l-password" name="upwd">
                 </div>
                 <div class="form-field">
-                    <button class="btn-large teal">Login</button>
+                    <button class="btn-large teal" (click)="loginUser()">Login</button>
                 </div>
             </div>
         </div>
