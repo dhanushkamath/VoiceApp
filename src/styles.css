@@ -1,4 +1,4 @@
-header.head{
+.head{
     background: url(src/assets/img/city-animated-1.jpg);
     background-size: cover;
     background-position: center;
@@ -6,10 +6,12 @@ header.head{
 }
 @media screen and (max-width: 670px){
     header.head{
-        min-height: 500px;
+        min-height: 1000px;
     }
 }
-
+.login{
+  margin-top: 10em;
+}
 .tabs .indicator{
 background-color: white;
 }
