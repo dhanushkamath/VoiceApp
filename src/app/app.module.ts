@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterinfoComponent } from './footerinfo/footerinfo.component';
 import { GetintouchComponent } from './getintouch/getintouch.component';
+import { TransactionsComponent } from './transactions/transactions.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GetintouchComponent } from './getintouch/getintouch.component';
     HomeComponent,
     LoginformComponent,
     FooterinfoComponent,
-    GetintouchComponent
+    GetintouchComponent,
+    TransactionsComponent
   ],
   imports: [
     BrowserModule,

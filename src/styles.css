@@ -12,6 +12,9 @@
 .login{
   margin-top: 10em;
 }
+.transactions{
+  padding-top: 10em;
+}
 .tabs .indicator{
 background-color: white;
 }
