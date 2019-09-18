@@ -1,7 +1,7 @@
 import { AuthGuard } from './auth.guard';
 import { TransactionsService } from './transactions.service';
 import { AuthService } from './auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginformComponent } from './loginform/loginform.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,7 +14,7 @@ import { FooterinfoComponent } from './footerinfo/footerinfo.component';
 import { GetintouchComponent } from './getintouch/getintouch.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
-
+import { TokenInterceptorService } from './token-interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,11 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuard, TransactionsService],
+  providers: [AuthService, AuthGuard, TransactionsService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

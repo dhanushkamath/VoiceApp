@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class TransactionsService {
 
-  private TRANSACTIONS_URL = 'http://localhost:3000/api/events'
+  private TRANSACTIONS_URL = 'http://localhost:3000/api/special'
 
   constructor(private http: HttpClient) { }
 
