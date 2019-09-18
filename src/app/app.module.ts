@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { TransactionsService } from './transactions.service';
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,7 +32,7 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService, TransactionsService],
+  providers: [AuthService, AuthGuard, TransactionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

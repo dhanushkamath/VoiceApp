@@ -1,5 +1,6 @@
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginform',
@@ -10,7 +11,8 @@ export class LoginformComponent implements OnInit {
 
   userData = {}
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -18,7 +20,11 @@ export class LoginformComponent implements OnInit {
   loginUser() {
     this.authService.loginUser(this.userData)
     .subscribe(
-      res => console.log(res),
+      res => {
+        console.log(res)
+        localStorage.setItem('token', res.token)
+        this.router.navigate(['/transactions'])
+      },
       err => console.log(err)
     )
   }
