@@ -5,6 +5,7 @@
               <tr>
                   <th>Name</th>
                   <th>Price</th>
+                  <th>Date</th>
                   <th>Type</th>
                   <th>Reference</th>
                   <th>ID</th>
@@ -13,37 +14,14 @@
             </thead>
 
             <tbody class="black">
-              <tr>
-                <td>Alvin</td>
-                <td>$300.57</td>
-                <td>Credit</td>
-                <td>Gift</td>
-                <td>123123</td>
+              <tr *ngFor="let transaction of transactions">
+                <td>{{transaction.name}}</td>
+                <td>{{transaction.price}}</td>
+                <td>{{transaction.date}}</td>
+                <td>{{transaction.type}}</td>
+                <td>{{transaction.reference}}</td>
+                <td>{{transaction._id}}</td>
               </tr>
-              <tr>
-                <td>Alvin</td>
-                <td>$300.57</td>
-                <td>Credit</td>
-                <td>Gift</td>
-                <td>123123</td>
-              </tr>
-              <tr>
-                <td>Alvin</td>
-                <td>$300.57</td>
-                <td>Credit</td>
-                <td>Gift</td>
-                <td>123123</td>
-              </tr>
-              <tr>
-                <td>Alvin</td>
-                <td>$300.57</td>
-                <td>Credit</td>
-                <td>Gift</td>
-                <td>123123</td>
-              </tr>
-
-
-
             </tbody>
           </table>
     </div>

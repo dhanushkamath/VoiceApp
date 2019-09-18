@@ -1,3 +1,5 @@
+import { TransactionsService } from './transactions.service';
+import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginformComponent } from './loginform/loginform.component';
@@ -10,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterinfoComponent } from './footerinfo/footerinfo.component';
 import { GetintouchComponent } from './getintouch/getintouch.component';
 import { TransactionsComponent } from './transactions/transactions.component';
+import { LoginpageComponent } from './loginpage/loginpage.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { TransactionsComponent } from './transactions/transactions.component';
     LoginformComponent,
     FooterinfoComponent,
     GetintouchComponent,
-    TransactionsComponent
+    TransactionsComponent,
+    LoginpageComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, TransactionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
