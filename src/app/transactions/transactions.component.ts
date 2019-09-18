@@ -1,5 +1,7 @@
 import { TransactionsService } from './../transactions.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-transactions',
@@ -9,13 +11,19 @@ import { Component, OnInit } from '@angular/core';
 export class TransactionsComponent implements OnInit {
 
   transactions = []
-  constructor(private transactionsService: TransactionsService) { }
+  constructor(private transactionsService: TransactionsService,
+              private router: Router) { }
 
   ngOnInit() {
     this.transactionsService.getTransactions()
     .subscribe(
       res => this.transactions = res,
-      err => console.log(err)
+      err => {
+        console.log(err)
+        if (err instanceof HttpErrorResponse){
+          this.router.navigate(['/login'])
+        }
+      }
     )
   }
 
