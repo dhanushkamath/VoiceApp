@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpeechRecognitionService } from '../speech.service';
-
+import { Router } from '@angular/router';
 
 
 interface IWindow extends Window {
@@ -17,15 +17,16 @@ interface IWindow extends Window {
 
 export class SpeechComponent implements OnInit {
 
-  mic_status: String = 'mic_off'
-  pulse_status: String = ''
+  mic_status: string;
+  pulse_status: string;
 
-  speechData: String;
+  speechData: string;
   speechActive: boolean;
 
-  constructor(private speechRecognitionService: SpeechRecognitionService) {
+  constructor(private speechRecognitionService: SpeechRecognitionService, private router: Router) {
+    this.mic_status = 'mic'
     this.speechActive = false;
-    this.speechData = "";
+    this.speechData = '';
 }
 
   ngOnInit() {
@@ -37,13 +38,19 @@ export class SpeechComponent implements OnInit {
 
   toggleSpeech(): void {
       this.speechActive = true;
+      this.pulse_status = 'pulse';
 
       this.speechRecognitionService.record()
           .subscribe(
           //listener
           (value) => {
               this.speechData = value;
-              console.log("Recognition: " + value);
+              console.log("Recognition: " + this.speechData);
+              console.log(this.speechData.split(" "))
+              this.speechActive = false;
+              this.pulse_status = '';
+              this.navigate();
+
           },
           //errror
           (err) => {
@@ -55,10 +62,17 @@ export class SpeechComponent implements OnInit {
           },
           //completion
           () => {
-              this.speechActive = false;
               console.log("--complete--");
-              this.toggleSpeech();
           });
+  }
+
+  navigate(): void {
+      this.speechData.split(" ").forEach( (term) => {
+        if (['transactions', 'login', 'home'].indexOf(term) > -1) {
+          console.log(term);
+          this.router.navigate([`/${term}`]);
+        }
+      })
   }
 
 }
