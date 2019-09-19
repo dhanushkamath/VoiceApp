@@ -1,3 +1,4 @@
+import { SpeechRecognitionService } from './speech.service';
 import { AuthGuard } from './auth.guard';
 import { TransactionsService } from './transactions.service';
 import { AuthService } from './auth.service';
@@ -34,7 +35,7 @@ import { SpeechComponent } from './speech/speech.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuard, TransactionsService, {
+  providers: [AuthService, AuthGuard, SpeechRecognitionService,TransactionsService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
