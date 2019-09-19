@@ -41,6 +41,11 @@ export class SpeechComponent implements OnInit {
       this.speechActive = true;
       this.pulse_status = 'pulse';
 
+      var audio = new Audio();
+      audio.src = '../../assets/sounds/pop_drip.wav'
+      audio.load()
+      audio.play()
+
       this.speechRecognitionService.record()
           .subscribe(
           //listener
@@ -56,10 +61,7 @@ export class SpeechComponent implements OnInit {
           //errror
           (err) => {
               console.log(err);
-              if (err.error == "no-speech") {
-                  console.log("--restatring service--");
-                  this.toggleSpeech();
-              }
+
           },
           //completion
           () => {

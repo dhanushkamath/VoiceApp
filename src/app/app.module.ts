@@ -17,6 +17,7 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { SpeechComponent } from './speech/speech.component';
+import { OfferCardsComponent } from './offer-cards/offer-cards.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { SpeechComponent } from './speech/speech.component';
     GetintouchComponent,
     TransactionsComponent,
     LoginpageComponent,
-    SpeechComponent
+    SpeechComponent,
+    OfferCardsComponent
   ],
   imports: [
     BrowserModule,
