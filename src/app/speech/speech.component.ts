@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { SpeechRecognitionService } from '../speech.service';
 import { Router } from '@angular/router';
@@ -23,7 +24,7 @@ export class SpeechComponent implements OnInit {
   speechData: string;
   speechActive: boolean;
 
-  constructor(private speechRecognitionService: SpeechRecognitionService, private router: Router) {
+  constructor(private speechRecognitionService: SpeechRecognitionService, private router: Router, private authService: AuthService) {
     this.mic_status = 'mic'
     this.speechActive = false;
     this.speechData = '';
@@ -71,6 +72,9 @@ export class SpeechComponent implements OnInit {
         if (['transactions', 'login', 'home'].indexOf(term) > -1) {
           console.log(term);
           this.router.navigate([`/${term}`]);
+        }
+        else if (term == "logout" && this.authService.loggedIn()){
+          this.authService.logoutUser()
         }
       })
   }
