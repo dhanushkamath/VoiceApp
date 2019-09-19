@@ -4,6 +4,12 @@
     background-position: center;
     min-height: 1000px;
 }
+.warm{
+  background: url(src/assets/img/warm-1.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 1000px;
+}
 @media screen and (max-width: 670px){
     header.head{
         min-height: 1000px;
