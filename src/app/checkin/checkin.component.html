@@ -1,16 +1,18 @@
-<div class="head">
+<div class="warm">
   <div class="container">
   <div class="row transactions">
-    <div class="col s12 l6" *ngFor="let bank of banks">
+    <div class="col s12 l6" *ngFor="let bank of banks; let i = index">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
+            <div class="card-image">
+                <img src="../../assets/img/building-{{i}}.jpg">
+              </div>
           <span class="card-title">{{bank.Name}}</span>
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          <p>{{bank.PostalAddress.BuildingNumber}}, {{bank.PostalAddress.StreetName}}, {{bank.PostalAddress.TownName}}, {{bank.PostalAddress.PostCode}}</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
+          <a>Accessibility</a>
+          <a>Availability</a>
         </div>
       </div>
     </div>
