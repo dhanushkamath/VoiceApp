@@ -24,10 +24,11 @@ export class CheckinComponent implements OnInit {
             results = results.slice(0, results.length - 1);
           }
         }
-
         this.banks = results;
         console.log(this.banks);
     });
   }
-
+  testMore(i){
+    console.log(i)
+  }
 }
