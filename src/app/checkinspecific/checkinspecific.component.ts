@@ -1,6 +1,7 @@
 import { CheckinService } from './../checkin.service';
 import { TransferService } from './../transfer-service.service';
 import { Component, OnInit } from '@angular/core';
+var M = require('materialize-css')
 
 @Component({
   selector: 'app-checkinspecific',
@@ -35,6 +36,7 @@ export class CheckinspecificComponent implements OnInit {
   }
 
   ngOnInit() {
+    M.Tabs.init(document.querySelector('.tabs'), []);
 
   }
 
