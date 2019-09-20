@@ -1,3 +1,4 @@
+import { CheckinService } from './checkin.service';
 import { SpeechRecognitionService } from './speech.service';
 import { AuthGuard } from './auth.guard';
 import { TransactionsService } from './transactions.service';
@@ -18,6 +19,7 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { SpeechComponent } from './speech/speech.component';
 import { OfferCardsComponent } from './offer-cards/offer-cards.component';
+import { CheckinComponent } from './checkin/checkin.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { OfferCardsComponent } from './offer-cards/offer-cards.component';
     TransactionsComponent,
     LoginpageComponent,
     SpeechComponent,
-    OfferCardsComponent
+    OfferCardsComponent,
+    CheckinComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,7 @@ import { OfferCardsComponent } from './offer-cards/offer-cards.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService, AuthGuard, SpeechRecognitionService,TransactionsService, {
+  providers: [AuthService, AuthGuard, SpeechRecognitionService,TransactionsService, CheckinService,{
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
