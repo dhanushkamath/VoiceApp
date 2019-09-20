@@ -1,3 +1,4 @@
+import { CheckinspecificComponent } from './checkinspecific/checkinspecific.component';
 import { CheckinComponent } from './checkin/checkin.component';
 import { AuthGuard } from './auth.guard';
 import { LoginpageComponent } from './loginpage/loginpage.component';
@@ -10,7 +11,8 @@ import { HomeComponent } from './home/home.component'
 
 const routes: Routes = [
   {path: 'home', component : HomeComponent},
-  {path: 'checkin', component : CheckinComponent},
+  {path: 'locate', component : CheckinComponent},
+  {path: 'checkin', component : CheckinspecificComponent},
   {path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginpageComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}

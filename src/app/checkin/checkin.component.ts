@@ -1,5 +1,7 @@
+import { TransferService } from './../transfer-service.service';
 import { CheckinService } from './../checkin.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkin',
@@ -9,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class CheckinComponent implements OnInit {
 
   banks: Array<Object>;
-  constructor(private checkinService: CheckinService) { }
+  constructor(private checkinService: CheckinService, private transferService: TransferService, private router:Router) { }
 
   ngOnInit() {
     this.checkinService.getNearbyBanks(51.511302, -0.124744, 1).subscribe(data =>{
@@ -28,7 +30,8 @@ export class CheckinComponent implements OnInit {
         console.log(this.banks);
     });
   }
-  testMore(i){
-    console.log(i)
+  testMore(bank,i){
+    this.transferService.setData(bank,i)
+    this.router.navigate(['/checkin'])
   }
 }
