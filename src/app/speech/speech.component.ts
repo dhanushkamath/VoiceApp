@@ -71,12 +71,16 @@ export class SpeechComponent implements OnInit {
 
   navigate(): void {
       this.speechData.split(" ").forEach( (term) => {
-        if (['transactions', 'login', 'home'].indexOf(term) > -1) {
+        if (['transactions', 'login', 'home', 'locate'].indexOf(term) > -1) {
           console.log(term);
           this.router.navigate([`/${term}`]);
         }
         else if (term == "logout" && this.authService.loggedIn()){
           this.authService.logoutUser()
+        }
+        else if (['checkin', 'checking', 'check'].indexOf(term) > -1) {
+          console.log("Check",term);
+          this.router.navigate(['/checkin']);
         }
       })
   }

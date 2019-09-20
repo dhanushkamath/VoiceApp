@@ -4,13 +4,14 @@
             <div class="container">
             <a href="" routerLink ="/"class="brand-logo white-text">GradBank</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#" routerLink = "/home" *ngIf="!authService.loggedIn()" >Features</a></li>
-                <li><a href="#contact" routerLink = "/" *ngIf="!authService.loggedIn()">Contact</a></li>
-                <li><a href="#" routerLink ="/login" *ngIf="!authService.loggedIn()">Online Banking</a></li>
-                <li><a href="#about" routerLink = "/" *ngIf="!authService.loggedIn()">About</a></li>
+              <li><a href="#" routerLink ="/login" *ngIf="!authService.loggedIn()">Online Banking</a></li>
+              <li><a href="#" routerLink = "/locate">Locate</a></li>
+              <li><a href="#contact" routerLink = "/" *ngIf="!authService.loggedIn()">Contact</a></li>
+              <li><a href="#about" routerLink = "/" *ngIf="!authService.loggedIn()">About</a></li>
 
 
                 <li><a href="#"routerLink = "/transactions" *ngIf="authService.loggedIn()" >Transactions</a></li>
+                <li><a href="#"routerLink = "/checkin" *ngIf="authService.loggedIn()" >Check-in</a></li>
                 <li><a *ngIf="authService.loggedIn()" (click)="authService.logoutUser()">Logout</a></li>
             </ul>
 
