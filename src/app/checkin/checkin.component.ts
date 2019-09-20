@@ -1,3 +1,4 @@
+import { SpeechRecognitionService } from './../speech.service';
 import { TransferService } from './../transfer-service.service';
 import { CheckinService } from './../checkin.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,8 @@ import { Router } from '@angular/router';
 export class CheckinComponent implements OnInit {
 
   banks: Array<Object>;
-  constructor(private checkinService: CheckinService, private transferService: TransferService, private router:Router) { }
+  constructor(private checkinService: CheckinService, private transferService: TransferService, private router:Router,
+    private speech: SpeechRecognitionService) { }
 
   ngOnInit() {
     this.checkinService.getNearbyBanks(51.511302, -0.124744, 1).subscribe(data =>{
@@ -27,6 +29,7 @@ export class CheckinComponent implements OnInit {
           }
         }
         this.banks = results;
+        this.speech.Speak("Here's a list of branches near you.")
         console.log(this.banks);
     });
   }

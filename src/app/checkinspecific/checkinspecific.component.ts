@@ -1,3 +1,4 @@
+import { SpeechRecognitionService } from './../speech.service';
 import { CheckinService } from './../checkin.service';
 import { TransferService } from './../transfer-service.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,7 @@ export class CheckinspecificComponent implements OnInit {
   i: number;
   checkedin: boolean;
 
-  constructor(private transferService: TransferService, private checkinService: CheckinService) {
+  constructor(private transferService: TransferService, private checkinService: CheckinService, private speech: SpeechRecognitionService) {
     var temp = transferService.getData()
     this.i = temp[1]
     this.bank = temp[0]
@@ -26,9 +27,11 @@ export class CheckinspecificComponent implements OnInit {
       this.checkinService.getNearbyBanks(51.511302, -0.124744, 1).subscribe(data =>{
         var results = data['data'][0]['Brand'][0]['Branch']
         this.bank = results[0];
+        var name = results[0].Name;
         this.i = 0;
         this.data = [results[0]];
         console.log(this.bank);
+        speech.Speak("We see that you are at our branch in" + name + ". Take a look at the features available here.")
         this.checkedin = true;
     });
     }

@@ -5,11 +5,15 @@ import * as _ from "lodash";
 interface IWindow extends Window {
     webkitSpeechRecognition: any;
     SpeechRecognition: any;
+    SpeechSynthesisUtterance: any;
+    speechSynthesis: any;
 }
 
 @Injectable()
 export class SpeechRecognitionService {
     speechRecognition: any;
+    speechSynth: any;
+    speechSynthUtterance: any;
 
     constructor(private zone: NgZone) {
     }
@@ -61,6 +65,15 @@ export class SpeechRecognitionService {
     DestroySpeechObject() {
         if (this.speechRecognition)
             this.speechRecognition.stop();
+    }
+
+    Speak(message){
+      const { speechSynthesis }: IWindow = <IWindow>window;
+      const { SpeechSynthesisUtterance }: IWindow = <IWindow>window;
+
+      var msg = new SpeechSynthesisUtterance(message);
+      msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Whisper'; })[0];
+      speechSynthesis.speak(msg);
     }
 
 }

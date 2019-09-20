@@ -1,3 +1,4 @@
+import { SpeechRecognitionService } from './../speech.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,7 +13,8 @@ export class LoginformComponent implements OnInit {
   userData = {}
 
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private speech: SpeechRecognitionService) { }
 
   ngOnInit() {
   }
@@ -23,6 +25,7 @@ export class LoginformComponent implements OnInit {
       res => {
         console.log(res)
         localStorage.setItem('token', res.token)
+        this.speech.Speak("You have successfully logged in.")
         this.router.navigate(['/transactions'])
       },
       err => console.log(err)

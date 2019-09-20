@@ -1,3 +1,4 @@
+import { SpeechRecognitionService } from './../speech.service';
 import { TransactionsService } from './../transactions.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -12,12 +13,15 @@ export class TransactionsComponent implements OnInit {
 
   transactions = []
   constructor(private transactionsService: TransactionsService,
-              private router: Router) { }
+              private router: Router, private speech: SpeechRecognitionService) { }
 
   ngOnInit() {
     this.transactionsService.getTransactions()
     .subscribe(
-      res => this.transactions = res,
+      res => {
+        this.transactions = res;
+        this.speech.Speak("Transactions page")
+      },
       err => {
         console.log(err)
         if (err instanceof HttpErrorResponse){
