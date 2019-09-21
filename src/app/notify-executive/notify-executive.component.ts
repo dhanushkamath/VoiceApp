@@ -1,3 +1,4 @@
+import { SpeechRecognitionService } from './../speech.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotifyExecutiveComponent implements OnInit {
 
-  constructor() { }
+  constructor(private speech: SpeechRecognitionService) { }
 
   ngOnInit() {
+    this.speech.Speak('Hi. Welcome to VoiceBank! I am Elton. And I shall assist you shortly.')
   }
 
 }

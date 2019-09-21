@@ -83,8 +83,11 @@ export class SpeechComponent implements OnInit {
           this.router.navigate(['/checkin']);
         }
         else if (['chatbot', 'chat', 'talk'].indexOf(term) > -1) {
-          console.log("Check",term);
+          console.log("Chatbot",term);
           this.router.navigate(['/chatbot']);
+        }else if (['assistance', 'help'].indexOf(term) > -1) {
+          console.log("Check",term);
+          this.router.navigate(['/NotifyExecutive']);
         }
 
       })
