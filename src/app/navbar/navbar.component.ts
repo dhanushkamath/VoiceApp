@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  private authService: AuthService;
+  public authService: AuthService;
   // Injecting AuthService for accessing LoggedIn()
   constructor(authService: AuthService) {
     this.authService = authService;
