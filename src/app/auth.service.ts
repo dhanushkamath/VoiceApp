@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private LOGIN_URL = 'http://localhost:3000/api/login'
+  private LOGIN_URL = 'https://nodebackendteam20-dot-gcloudtutorial-253103.appspot.com/api/login'
 
   constructor(private http: HttpClient, private router: Router, private speech:SpeechRecognitionService) { }
 

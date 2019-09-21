@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class TransactionsService {
 
-  private TRANSACTIONS_URL = 'http://localhost:3000/api/special'
+  private TRANSACTIONS_URL = 'https://nodebackendteam20-dot-gcloudtutorial-253103.appspot.com/api/special'
 
   constructor(private http: HttpClient) { }
 

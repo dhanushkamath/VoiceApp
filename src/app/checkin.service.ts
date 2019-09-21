@@ -22,7 +22,7 @@ export class CheckinService {
     this.longitude = longi;
     this.radius = radius;
 
-    this.LOCATOR_URL = `http://localhost:3000/proxy/locator?lati=${this.latitude}&longi=${this.longitude}&radi=${this.radius}`
+    this.LOCATOR_URL = `https://nodebackendteam20-dot-gcloudtutorial-253103.appspot.com/proxy/locator?lati=${this.latitude}&longi=${this.longitude}&radi=${this.radius}`
     console.log(this.LOCATOR_URL)
 
     return this.http.get<any>(this.LOCATOR_URL)
