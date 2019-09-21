@@ -1,3 +1,4 @@
+import { ChatbotComponent } from './chatbot/chatbot.component';
 import { CheckinspecificComponent } from './checkinspecific/checkinspecific.component';
 import { CheckinComponent } from './checkin/checkin.component';
 import { AuthGuard } from './auth.guard';
@@ -11,6 +12,7 @@ import { HomeComponent } from './home/home.component'
 
 const routes: Routes = [
   {path: 'home', component : HomeComponent},
+  {path: 'chatbot', component : ChatbotComponent},
   {path: 'locate', component : CheckinComponent},
   {path: 'checkin', component : CheckinspecificComponent},
   {path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard]},

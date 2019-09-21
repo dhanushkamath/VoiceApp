@@ -22,6 +22,7 @@ import { OfferCardsComponent } from './offer-cards/offer-cards.component';
 import { CheckinComponent } from './checkin/checkin.component';
 import { TransferService } from './transfer-service.service';
 import { CheckinspecificComponent } from './checkinspecific/checkinspecific.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { CheckinspecificComponent } from './checkinspecific/checkinspecific.comp
     SpeechComponent,
     OfferCardsComponent,
     CheckinComponent,
-    CheckinspecificComponent
+    CheckinspecificComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
