@@ -23,6 +23,7 @@ import { CheckinComponent } from './checkin/checkin.component';
 import { TransferService } from './transfer-service.service';
 import { CheckinspecificComponent } from './checkinspecific/checkinspecific.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { NotifyExecutiveComponent } from './notify-executive/notify-executive.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     OfferCardsComponent,
     CheckinComponent,
     CheckinspecificComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    NotifyExecutiveComponent
   ],
   imports: [
     BrowserModule,

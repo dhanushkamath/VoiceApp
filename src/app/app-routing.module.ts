@@ -8,11 +8,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component'
+import { NotifyExecutiveComponent } from './notify-executive/notify-executive.component';
 
 
 const routes: Routes = [
   {path: 'home', component : HomeComponent},
   {path: 'chatbot', component : ChatbotComponent},
+  {path: 'NotifyExecutive', component : NotifyExecutiveComponent},
   {path: 'locate', component : CheckinComponent},
   {path: 'checkin', component : CheckinspecificComponent},
   {path: 'transactions', component: TransactionsComponent, canActivate: [AuthGuard]},
