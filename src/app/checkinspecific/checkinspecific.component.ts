@@ -11,8 +11,8 @@ var M = require('materialize-css')
 })
 export class CheckinspecificComponent implements OnInit {
 
-  data: Object;
-  bank: Object;
+  data: any;
+  bank: any;
   i: number;
   checkedin: boolean;
 
